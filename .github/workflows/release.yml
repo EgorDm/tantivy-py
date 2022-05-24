@@ -61,7 +61,7 @@ jobs:
           MATURIN_PYPI_TOKEN: ${{ secrets.TEST_PYPI_API_TOKEN }}
         with:
           command: upload
-          args: --repository-url https://test.pypi.org/legacy/ --skip-existing *
+          args: --repository-url=https://test.pypi.org/legacy/ --skip-existing *
       - name: Publish to PyPI
         if: "startsWith(github.ref, 'refs/tags/')"
         uses: messense/maturin-action@v1
